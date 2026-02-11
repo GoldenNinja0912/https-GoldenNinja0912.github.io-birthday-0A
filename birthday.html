@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Aoife</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle at top, #1b1b2f, #0f0f1a);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.heart {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: pink;
+    transform: rotate(45deg);
+    animation: float 8s linear infinite;
+    opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: pink;
+    border-radius: 50%;
+}
+
+.heart::before { top: -7px; left: 0; }
+.heart::after { left: -7px; top: 0; }
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+    20% { opacity: 0.7; }
+    100% { transform: translateY(-20vh) rotate(45deg); opacity: 0; }
+}
+
+.cake {
+    position: relative;
+    width: 220px;
+    height: 120px;
+    background: linear-gradient(#ffb6c1, #ff8fab);
+    border-radius: 0 0 20px 20px;
+    box-shadow: inset 0 -10px rgba(0,0,0,0.15);
+    z-index: 2;
+}
+
+.cake::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    width: 220px;
+    height: 40px;
+    background: #fff0f5;
+    border-radius: 20px 20px 0 0;
+}
+
+.candle {
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 50px;
+    background: repeating-linear-gradient(
+        45deg,
+        #ffffff,
+        #ffffff 4px,
+        #ff6b6b 4px,
+        #ff6b6b 8px
+    );
+    border-radius: 6px;
+}
+
+.flame {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 20px;
+    height: 20px;
+    background: #ff4d4d;
+    animation: flicker 1s infinite alternate;
+    box-shadow: 0 0 20px #ff4d4d;
+}
+
+.flame::before,
+.flame::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4d4d;
+    border-radius: 50%;
+}
+
+.flame::before { top: -10px; left: 0; }
+.flame::after { left: -10px; top: 0; }
+
+@keyframes flicker {
+    from { transform: translateX(-50%) rotate(45deg) scale(1); }
+    to { transform: translateX(-50%) rotate(45deg) scale(1.1); }
+}
+
+.message {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    z-index: 2;
+}
+
+.handwritten {
+    margin-top: 20px;
+    max-width: 90%;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2rem;
+    color: #ffd6e8;
+    line-height: 1.6;
+    z-index: 2;
+}
+</style>
+</head>
+<body>
+
+<script>
+for (let i = 0; i < 25; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (6 + Math.random() * 6) + "s";
+    heart.style.animationDelay = Math.random() * 6 + "s";
+    document.body.appendChild(heart);
+}
+</script>
+
+<div class="cake">
+    <div class="candle">
+        <div class="flame"></div>
+    </div>
+</div>
+
+<div class="message">
+    🎉 <strong>HAPPY BIRTHDAY AOIFE</strong> 🎉<br>
+    I MISS YOU AND WISH YOU THE BEST BIRTHDAY
+</div>
+
+<div class="handwritten">
+    Thank you for everything. I hope you have an amazing day.<br>
+    I’m appreciative of you and everything you do,<br>
+    so I hope you enjoy this day.
+</div>
+
+</body>
+</html>
